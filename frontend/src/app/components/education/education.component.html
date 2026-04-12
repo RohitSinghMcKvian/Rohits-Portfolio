@@ -1,0 +1,36 @@
+<section id="education" class="section education-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-right">Education</h2>
+
+    <div class="education-grid">
+      @for (edu of education; track edu.degree; let i = $index) {
+        <div class="education-card" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+          <div class="edu-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="edu-content">
+            <span class="edu-period">{{ edu.period }}</span>
+            <h3 class="edu-degree">{{ edu.degree }}</h3>
+            <p class="edu-institution">{{ edu.institution }}</p>
+            <p class="edu-location">
+              <i class="fas fa-map-marker-alt"></i> {{ edu.location }}
+            </p>
+            @if (edu.cgpa) {
+              <span class="edu-score">CGPA: {{ edu.cgpa }}</span>
+            }
+            @if (edu.percentage) {
+              <span class="edu-score">{{ edu.percentage }}</span>
+            }
+            @if (edu.highlights.length > 0) {
+              <ul class="edu-highlights">
+                @for (highlight of edu.highlights; track highlight) {
+                  <li><i class="fas fa-star"></i> {{ highlight }}</li>
+                }
+              </ul>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

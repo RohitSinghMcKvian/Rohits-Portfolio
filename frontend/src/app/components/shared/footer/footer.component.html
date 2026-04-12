@@ -1,0 +1,22 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="brand-name">RS</span>
+        <p class="footer-tagline">Building digital experiences with passion.</p>
+      </div>
+
+      <div class="footer-social">
+        @for (link of socialLinks; track link.label) {
+          <a [href]="link.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="link.label">
+            <i [class]="link.icon"></i>
+          </a>
+        }
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} Rohit Singh. Crafted with Angular & caffeine.</p>
+    </div>
+  </div>
+</footer>

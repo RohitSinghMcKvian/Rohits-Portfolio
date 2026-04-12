@@ -1,0 +1,44 @@
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-greeting" data-aos="fade-down" data-aos-delay="0">Hello, I'm</p>
+    <h1 class="hero-name" data-aos="fade-up" data-aos-delay="100">{{ heroData.name }}</h1>
+
+    <div class="hero-title-wrapper" data-aos="fade-up" data-aos-delay="200">
+      <span class="hero-title">{{ heroData.title }}</span>
+    </div>
+
+    <p class="hero-tagline" data-aos="fade-up" data-aos-delay="300">{{ heroData.tagline }}</p>
+
+    <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+      <a [href]="'mailto:' + heroData.email" class="btn-accent">
+        <i class="fas fa-envelope"></i> Get in Touch
+      </a>
+      <a [href]="heroData.github" target="_blank" rel="noopener noreferrer" class="btn-outline">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+
+    <div class="hero-social" data-aos="fade-up" data-aos-delay="500">
+      <a [href]="'mailto:' + heroData.email" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a [href]="heroData.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a [href]="heroData.twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a [href]="heroData.github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+      <span>Scroll to explore</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+</section>

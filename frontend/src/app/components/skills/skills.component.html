@@ -1,0 +1,24 @@
+<section id="skills" class="section skills-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-right">Skills</h2>
+
+    @for (cat of categories; track cat.key) {
+      <div class="skill-category" data-aos="fade-up">
+        <h3 class="category-title">
+          <i [class]="'fas ' + cat.icon"></i> {{ cat.label }}
+        </h3>
+        <div class="skills-grid">
+          @for (skill of getSkillsByCategory(cat.key); track skill.name) {
+            <div class="skill-tag" [attr.data-level]="skill.level">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-level">{{ getProficiencyLabel(skill.level) }}</span>
+              <div class="skill-bar">
+                <div class="skill-bar-fill" [style.width.%]="skill.level"></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>

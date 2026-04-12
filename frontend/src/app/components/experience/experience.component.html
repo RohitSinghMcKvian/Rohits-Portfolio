@@ -1,0 +1,46 @@
+<section id="experience" class="section experience-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-right">Experience</h2>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.company; let i = $index) {
+        <div class="timeline-item" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content" [class.expanded]="isExpanded(i)">
+            <div class="timeline-header" (click)="toggleExpand(i)">
+              <div class="timeline-meta">
+                <span class="timeline-period">{{ exp.period }}</span>
+                <h3 class="timeline-role">{{ exp.role }}</h3>
+                <span class="timeline-company">{{ exp.company }}</span>
+                <span class="timeline-location">
+                  <i class="fas fa-map-marker-alt"></i> {{ exp.location }}
+                </span>
+              </div>
+              <button class="expand-btn" [attr.aria-expanded]="isExpanded(i)">
+                <i class="fas" [class.fa-chevron-down]="!isExpanded(i)" [class.fa-chevron-up]="isExpanded(i)"></i>
+              </button>
+            </div>
+
+            <p class="timeline-description">{{ exp.description }}</p>
+
+            @if (isExpanded(i)) {
+              <div class="timeline-projects">
+                @for (project of exp.projects; track project.name) {
+                  <div class="project-card">
+                    <h4 class="project-name">{{ project.name }}</h4>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-tech">
+                      @for (tech of project.technologies; track tech) {
+                        <span class="tech-tag">{{ tech }}</span>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

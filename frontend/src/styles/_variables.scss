@@ -1,0 +1,64 @@
+// Theme Variables
+:root {
+  // Light theme (default)
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #1a1a2e;
+  --text-secondary: #495057;
+  --text-muted: #6c757d;
+  --accent-primary: #4f46e5;
+  --accent-secondary: #818cf8;
+  --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+  --navbar-bg: rgba(248, 249, 250, 0.85);
+  --timeline-line: #dee2e6;
+  --timeline-dot: #4f46e5;
+  --skill-tag-bg: #e9ecef;
+  --skill-tag-hover: #4f46e5;
+  --skill-tag-text: #1a1a2e;
+  --footer-bg: #1a1a2e;
+  --footer-text: #adb5bd;
+  --section-divider: #dee2e6;
+  --form-control-bg: #ffffff;
+  --form-control-border: #ced4da;
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #adb5bd;
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #16213e;
+  --text-primary: #f0f0f0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #7a7a8c;
+  --accent-primary: #7c3aed;
+  --accent-secondary: #a78bfa;
+  --accent-gradient: linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #ec4899 100%);
+  --card-bg: #1a1a2e;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --navbar-bg: rgba(15, 15, 26, 0.9);
+  --timeline-line: #2d2d44;
+  --timeline-dot: #7c3aed;
+  --skill-tag-bg: #16213e;
+  --skill-tag-hover: #7c3aed;
+  --skill-tag-text: #f0f0f0;
+  --footer-bg: #0a0a14;
+  --footer-text: #7a7a8c;
+  --section-divider: #2d2d44;
+  --form-control-bg: #1a1a2e;
+  --form-control-border: #3d3d5c;
+  --scrollbar-track: #1a1a2e;
+  --scrollbar-thumb: #3d3d5c;
+}

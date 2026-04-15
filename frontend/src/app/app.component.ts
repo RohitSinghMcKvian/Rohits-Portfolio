@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
@@ -40,9 +40,58 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     AOS.init({
       duration: 800,
-      once: true,
+      once: false,
       offset: 100,
       easing: 'ease-out'
     });
+
+    // Initialize cursor
+    this.initCursor();
+    this.initParticles();
+  }
+
+  private initCursor(): void {
+    const cursor = document.getElementById('cursor');
+    const cursorAura = document.getElementById('cursorAura');
+
+    if (!cursor || !cursorAura) return;
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      cursorAura.style.left = e.clientX + 'px';
+      cursorAura.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button, .btn-accent, .btn-outline, .card, .skill-tag, .project-card, .contact-link').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+  }
+
+  private initParticles(): void {
+    const particlesContainer = document.getElementById('globalParticles');
+    if (!particlesContainer) return;
+
+    // Add particles dynamically
+    for (let i = 0; i < 30; i++) {
+      const particle = document.createElement('span');
+      particle.className = 'particle';
+      particle.style.cssText = `
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+        width: ${Math.random() * 6 + 3}px;
+        height: ${Math.random() * 6 + 3}px;
+        background: ${this.getRandomColor()};
+        animation-duration: ${Math.random() * 10 + 15}s;
+        animation-delay: ${Math.random() * -20}s;
+      `;
+      particlesContainer.appendChild(particle);
+    }
+  }
+
+  private getRandomColor(): string {
+    const colors = ['var(--neon-cyan)', 'var(--neon-magenta)', 'var(--neon-purple)'];
+    return colors[Math.floor(Math.random() * colors.length)];
   }
 }

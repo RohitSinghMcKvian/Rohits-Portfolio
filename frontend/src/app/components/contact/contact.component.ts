@@ -25,8 +25,7 @@ export class ContactComponent {
 
   socialLinks = [
     { icon: 'fab fa-linkedin', url: this.contactData.linkedin, label: 'LinkedIn' },
-    { icon: 'fab fa-twitter', url: this.contactData.twitter, label: 'Twitter' },
-    { icon: 'fab fa-skype', url: `skype:${this.contactData.skype}?chat`, label: 'Skype' },
+    { icon: 'fab fa-github', url: this.contactData.github, label: 'GitHub' },
     { icon: 'fas fa-envelope', url: `mailto:${this.contactData.email}`, label: 'Email' }
   ];
 

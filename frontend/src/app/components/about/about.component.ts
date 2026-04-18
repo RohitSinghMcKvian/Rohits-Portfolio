@@ -11,4 +11,5 @@ import { resumeData } from '../../data/resume-data';
 })
 export class AboutComponent {
   aboutData = resumeData.about;
+  heroData = resumeData.hero;
 }

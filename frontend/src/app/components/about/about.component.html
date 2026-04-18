@@ -5,9 +5,13 @@
     <div class="about-content">
       <div class="about-image" data-aos="fade-right" data-aos-delay="100">
         <div class="image-wrapper">
-          <div class="image-placeholder">
-            <i class="fas fa-user"></i>
-          </div>
+          @if (aboutData.profileImage) {
+            <img [src]="aboutData.profileImage" [alt]="aboutData.name || 'Profile'" class="profile-img">
+          } @else {
+            <div class="image-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
+          }
           <div class="image-decoration"></div>
         </div>
       </div>
@@ -40,6 +44,14 @@
             <span class="stat-label">Companies</span>
           </div>
         </div>
+
+        @if (aboutData.resumeUrl) {
+          <div class="resume-download">
+            <a [href]="aboutData.resumeUrl" target="_blank" rel="noopener noreferrer" class="btn-resume">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
+        }
       </div>
     </div>
   </div>

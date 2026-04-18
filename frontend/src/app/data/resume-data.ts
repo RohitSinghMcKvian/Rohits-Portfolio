@@ -13,9 +13,11 @@ export const resumeData = {
 
   about: {
     bio: `Results-driven Full-Stack Software Developer with 5+ years of hands-on experience architecting, developing, and deploying scalable web applications across real estate ERP, cargo logistics and revenue management domains. Proficient in Angular 18, ASP.NET Core 8, C#, Microsoft SQL Server, and MongoDB, with a strong command of RESTful API design, component-driven front-end architecture, and relational and SQL database optimization. Experienced in AI-assisted development workflows using Claude Code and Claude Chat to accelerate user story implementation, automate code scaffolding, and resolve production defects with greater velocity. Adept at translating complex business requirements into maintainable, high-performance solutions. Proven ability to thrive in fast-paced R&D and product engineering environments while collaborating effectively across cross-functional teams.`,
+    name: 'Rohit Singh',
     location: 'New Delhi – 110003 / Kolkata – 700059',
     languages: ['English', 'Hindi', 'Bengali'],
-    profileImage: ''
+    profileImage: 'profile-compressed.jpg',
+    resumeUrl: 'Rohit_Singh_Resume.pdf'
   },
 
   experience: [

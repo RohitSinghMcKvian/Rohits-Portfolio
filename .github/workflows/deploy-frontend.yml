@@ -53,6 +53,12 @@ jobs:
           path: frontend/dist/frontend/browser
 
   deploy:
+    environment:
+      name: github-pages
+      deployment_policy:
+        branches:
+          - gh-pages
+          - master
     needs: build
     runs-on: ubuntu-latest
     steps:

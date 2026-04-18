@@ -22,6 +22,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: false
+          fetch-depth: 1
+
+      - name: Clean any cached submodule artifacts
+        run: |
+          rm -rf frontend/node_modules/.cache/gh-pages 2>/dev/null || true
+          git checkout --force --no-track --depth=1 origin/main -- .gitmodules 2>/dev/null || true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

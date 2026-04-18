@@ -1,0 +1,90 @@
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-right">Get in Touch</h2>
+
+    <div class="contact-layout">
+      <div class="contact-info" data-aos="fade-right">
+        <h3>Let's Connect</h3>
+        <p>Have a project in mind or want to collaborate? Feel free to reach out!</p>
+
+        <div class="contact-links">
+          @for (link of socialLinks; track link.label) {
+            <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <i [class]="link.icon"></i>
+              <span>{{ link.label }}</span>
+            </a>
+          }
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper" data-aos="fade-left">
+        @if (submitSuccess) {
+          <div class="success-message">
+            <i class="fas fa-check-circle"></i>
+            <h4>Message Sent!</h4>
+            <p>Thank you for reaching out. I'll get back to you soon.</p>
+          </div>
+        } @else {
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+            @if (submitError) {
+              <div class="error-banner">
+                <i class="fas fa-exclamation-circle"></i>
+                {{ submitError }}
+              </div>
+            }
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-control"
+                [class.is-invalid]="contactForm.get('name')?.touched && contactForm.get('name')?.invalid"
+                placeholder="Your name">
+              @if (getFieldError('name')) {
+                <div class="field-error">{{ getFieldError('name') }}</div>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="form-control"
+                [class.is-invalid]="contactForm.get('email')?.touched && contactForm.get('email')?.invalid"
+                placeholder="your.email@example.com">
+              @if (getFieldError('email')) {
+                <div class="field-error">{{ getFieldError('email') }}</div>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                formControlName="message"
+                rows="5"
+                class="form-control"
+                [class.is-invalid]="contactForm.get('message')?.touched && contactForm.get('message')?.invalid"
+                placeholder="Tell me about your project or idea..."></textarea>
+              @if (getFieldError('message')) {
+                <div class="field-error">{{ getFieldError('message') }}</div>
+              }
+            </div>
+
+            <button type="submit" class="btn-accent submit-btn" [disabled]="isSubmitting">
+              @if (isSubmitting) {
+                <i class="fas fa-spinner fa-spin"></i> Sending...
+              } @else {
+                <i class="fas fa-paper-plane"></i> Send Message
+              }
+            </button>
+          </form>
+        }
+      </div>
+    </div>
+  </div>
+</section>

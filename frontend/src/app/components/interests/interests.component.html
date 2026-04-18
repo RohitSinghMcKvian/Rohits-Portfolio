@@ -1,0 +1,16 @@
+<section id="interests" class="section interests-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-right">Interests</h2>
+
+    <div class="interests-grid">
+      @for (interest of interests; track interest.name; let i = $index) {
+        <div class="interest-card" data-aos="zoom-in" [attr.data-aos-delay]="i * 60">
+          <div class="interest-icon">
+            <i [class]="'fas ' + interest.icon"></i>
+          </div>
+          <span class="interest-name">{{ interest.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+.interests-section {
+  background: transparent;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.interest-card {
+  background: rgba(0, 240, 255, 0.02);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  border-radius: 4px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: var(--neon-cyan);
+    background: rgba(0, 240, 255, 0.05);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+
+    .interest-icon {
+      background: var(--neon-cyan);
+      color: var(--bg-primary);
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+      transform: scale(1.1);
+    }
+  }
+}
+
+.interest-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  background: rgba(0, 240, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--neon-cyan);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.interest-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 576px) {
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .interest-card {
+    padding: 20px 14px;
+  }
+
+  .interest-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
+  }
+}

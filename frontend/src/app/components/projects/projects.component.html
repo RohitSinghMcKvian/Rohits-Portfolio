@@ -1,0 +1,68 @@
+<section id="projects" class="section projects-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-right">Projects</h2>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.name; let i = $index) {
+        <div class="project-card" data-aos="fade-up" [attr.data-aos-delay]="i * 100" (click)="openModal(project)">
+          <div class="project-icon">
+            <i [class]="'fas ' + project.icon"></i>
+          </div>
+          <div class="project-category">{{ project.category }}</div>
+          <h3 class="project-name">{{ project.name }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-tech">
+            @for (tech of project.technologies.slice(0, 3); track tech) {
+              <span class="tech-tag">{{ tech }}</span>
+            }
+            @if (project.technologies.length > 3) {
+              <span class="tech-tag">+{{ project.technologies.length - 3 }}</span>
+            }
+          </div>
+          <button class="project-view-btn">
+            View Details <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      }
+    </div>
+
+    @if (selectedProject) {
+      <div class="modal-overlay" (click)="closeModal()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+          <button class="modal-close" (click)="closeModal()">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <div class="modal-header">
+            <div class="modal-icon">
+              <i [class]="'fas ' + selectedProject.icon"></i>
+            </div>
+            <div>
+              <span class="modal-category">{{ selectedProject.category }}</span>
+              <h2 class="modal-title">{{ selectedProject.name }}</h2>
+            </div>
+          </div>
+
+          <p class="modal-description">{{ selectedProject.fullDescription }}</p>
+
+          <div class="modal-section">
+            <h4>Technologies Used</h4>
+            <div class="modal-tech">
+              @for (tech of selectedProject.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h4>Outcomes</h4>
+            <div class="modal-outcome">
+              <i class="fas fa-chart-line"></i>
+              <span>{{ selectedProject.outcomes }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

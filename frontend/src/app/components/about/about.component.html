@@ -1,0 +1,46 @@
+<section id="about" class="section about-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-right">About Me</h2>
+
+    <div class="about-content">
+      <div class="about-image" data-aos="fade-right" data-aos-delay="100">
+        <div class="image-wrapper">
+          <div class="image-placeholder">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="image-decoration"></div>
+        </div>
+      </div>
+
+      <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+        <p class="about-bio">{{ aboutData.bio }}</p>
+
+        <div class="about-details">
+          <div class="detail-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>{{ aboutData.location }}</span>
+          </div>
+          <div class="detail-item">
+            <i class="fas fa-language"></i>
+            <span>{{ aboutData.languages.join(', ') }}</span>
+          </div>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Projects Built</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Companies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

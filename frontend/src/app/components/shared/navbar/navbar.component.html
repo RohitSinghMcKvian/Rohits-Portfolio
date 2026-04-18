@@ -1,0 +1,29 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-container">
+    <a class="navbar-brand" href="#">
+      <span class="brand-name">RS</span>
+    </a>
+
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()" [attr.aria-expanded]="isMobileMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" [class.mobile-open]="isMobileMenuOpen">
+      @for (link of navLinks; track link.label) {
+        <li>
+          <a [href]="link.anchor" (click)="closeMobileMenu()">{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+
+    <button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="'Switch to ' + (themeService.currentTheme === 'light' ? 'dark' : 'light') + ' mode'">
+      @if (themeService.currentTheme === 'light') {
+        <i class="fas fa-moon"></i>
+      } @else {
+        <i class="fas fa-sun"></i>
+      }
+    </button>
+  </div>
+</nav>

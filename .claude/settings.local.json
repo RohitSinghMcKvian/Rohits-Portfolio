@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npx @angular/cli@18 version)",
+      "Bash(dotnet --version)",
+      "Bash(npm install:*)",
+      "Bash(npx ng:*)",
+      "Bash(dotnet add:*)",
+      "Bash(dotnet build:*)",
+      "Bash(curl:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

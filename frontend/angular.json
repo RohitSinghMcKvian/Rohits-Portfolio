@@ -65,7 +65,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/",
+              "baseHref": "/Rohits-Portfolio/",
               "budgets": [
                 {
                   "type": "initial",
